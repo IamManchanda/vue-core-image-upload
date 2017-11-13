@@ -91,7 +91,8 @@ module.exports = function (method, url, headers, data, callback, err, isBinary) 
   if (isBinary) {
     return r.sendAsBinary(data);
   }
-  r.withCredentials = true;
+  // Set withCredentials to false
+  r.withCredentials = false;
   r.send(data);
   return r;
   // Headers are returned as a string
